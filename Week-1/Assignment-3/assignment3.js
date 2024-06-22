@@ -11,23 +11,27 @@ function countAandB(input) {
 }
 
 function toNumber(input) {
-    let input2[6];
     for(let i=0;i<input.length;i++){
         if ("a" == input[i]){
-            input2[i] = 1;
+            input[i] = 1;
         }else if("b" == input[i]){
-            input2[i] = 2;
+            input[i] = 2;
         }else if("c" == input[i]){
-            input2[i] = 3;  
+            input[i] = 3;  
         }else if("d" == input[i]){
-            input2[i] = 4;
+            input[i] = 4;
         }else if("e" == input[i]){
-            input2[i] = 5;
+            input[i] = 5;
         }
+        
         }
-        console.log(input2[i]);
+        console.log(input);
     }
 
-let input = ['a', 'b', 'c', 'a', 'c', 'a', 'c'];
-console.log(countAandB(input));
-console.log(toNumber(input));
+let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'c'];
+console.log(countAandB(input1));
+console.log(toNumber(input1));
+
+let input2 = ['e', 'd', 'c', 'd', 'e'];
+console.log(countAandB(input2));
+console.log(toNumber(input2));
