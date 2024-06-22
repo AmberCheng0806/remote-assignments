@@ -1,0 +1,52 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+header {
+    background-color:rgba(212, 208, 207, 0.8);
+    height:60px;
+    width:100%;
+    position:fixed; 
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;   
+}
+
+header a {
+    text-decoration: none;
+    color:black
+}
+
+a:hover {
+    color:blue
+}
+
+.logo {
+    margin-top: 5px;
+    height: 50px;
+    width: 90px; 
+}
+header ul {
+    position:absolute;
+    right:3vw;
+    line-height:60px;
+}
+header li {
+    display:inline;
+    margin:1vw 2vw;    
+}
+
+.welcome {
+    background-color: rgb(138, 195, 236);
+    position: absolute;
+    top: 60px;
+}
+
+.section {
+    background-color: white;
+}
+
+.content {
+    background-color: rgb(145, 158, 176);
+}
