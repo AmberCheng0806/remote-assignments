@@ -76,10 +76,10 @@ header li {
 
 .content {
     background-color: rgb(145, 158, 176, 0.6);
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     gap: 60px;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0px 180px 80px;
 }
 .content div {
@@ -121,8 +121,5 @@ button {
     left:47%
 }
 
-@media screen and (min-width: 1200px) {
-.content div {
-    width:1200px;
-}
+
 }
