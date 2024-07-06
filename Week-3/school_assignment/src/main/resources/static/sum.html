@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    請輸入:<input type="text" id="number" />
+    <button id="btn">Enter</button>
+    <div id="msg"></div>
+  </body>
+  <script>
+    const btn = document.querySelector("#btn");
+    const number = document.querySelector("#number");
+    const msg = document.querySelector("#msg");
+    btn.addEventListener("click", () => {
+      fetch(`data?number=${number.value}`)
+        .then((resp) => {
+          return resp.text();
+        })
+        .then((result) => {
+          msg.textContent = result; //變數.屬性
+        });
+    });
+  </script>
+</html>

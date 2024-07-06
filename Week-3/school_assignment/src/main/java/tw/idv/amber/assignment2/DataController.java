@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DataController {
     @GetMapping("data")
     public String data(@RequestParam(required = false) String number) {
-        if (number == null) {
+        if (number == null || number.isEmpty()) {
             return "Lack of Parameter";
         } else {
             try {
@@ -25,3 +25,4 @@ public class DataController {
     }
 
 }
+
