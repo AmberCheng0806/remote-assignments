@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="signup" method="POST">
+    email:<input type="email" name="email" /><br>
+    password:<input type="password" name="password" /><br>
+    <input type="submit" value="sign up" />
+</form>
+
+<br>
+<form action="signIn" method ="POST">
+    email:<input type="email" name="email" /><br>
+    password:<input type="password" name="password" /><br>
+    <input type="submit" value="sign in" />
+</form>
+<div id="msgDiv"></div>
+</body>
+<script>
+    const errMsg = getQueryParam("errMsg");
+    if(errMsg){
+    document.querySelector("#msgDiv").textContent = errMsg;
+    }
+
+    function getQueryParam(name){
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+    }
+</script>
+
+</html>

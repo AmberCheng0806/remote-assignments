@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1"> 
+<thead>
+    <thead id="thead01"></thead> <!-- 填入name,price,description -->
+
+    <tbody id="tbody01">
+        <!-- <tr> 第一個row，共三個
+            <td>Pixel 3</td>
+            <td>27700</td>
+            <td>最新的 Google 手機</td>
+        </tr> -->
+    </tbody>
+</thead>
+    </table>
+</body>
+<script>
+    function ajax(src, callback) {
+  fetch(src)
+    .then((resp) => 
+      resp.json()
+    )
+    .then(callback);
+}
+
+function render(data) {
+  const thead01 = document.querySelector("#thead01");
+  let tr = document.createElement("tr");
+  thead01.appendChild(tr);
+
+  const keys = Object.keys(data[0]); //從物件拿屬性名稱
+  for(let key of keys){ //of array
+    const th = document.createElement("th");
+    th.textContent = key;
+    tr.appendChild(th);
+  }
+
+//   ----------------上head下body
+
+const tbody01 = document.querySelector("#tbody01");
+for(let item of data){
+    tr = document.createElement("tr");
+    tbody01.appendChild(tr);
+    for(let k in item){ //in object
+        const value = item[k]; //item.k(但k為變數不能用)
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.appendChild(td);
+    }
+}
+}
+
+ajax(
+  "https://remote-assignment.s3.ap-northeast-1.amazonaws.com/products",
+  function (response) {  //render
+    render(response);
+  }
+);
+</script>
+</html>
